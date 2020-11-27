@@ -1,0 +1,8 @@
+
+
+git remote add origin https://github.com/leandrodmoreira/IoT2B.git
+
+git add linux.html
+
+git commit -m "my frist commit on raspberry"
+
