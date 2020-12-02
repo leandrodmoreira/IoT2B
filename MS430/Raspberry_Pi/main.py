@@ -72,5 +72,7 @@ print("Temperature = {:.1f} ".format(temperature) + CELSIUS_SYMBOL)
 print("Aqui começa meu código")
 
 print(temperature)
+print(raw_data[0])
+print(raw_data[1])
 
 GPIO.cleanup()
