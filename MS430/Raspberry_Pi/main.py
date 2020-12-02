@@ -72,7 +72,38 @@ print("Temperature = {:.1f} ".format(temperature) + CELSIUS_SYMBOL)
 print("Aqui começa meu código")
 
 print(temperature)
-temperatureComma = temperature.replace(".",",")
-print(temperatureComma)
+
+#Criação das variáveis
+now = datetime.now()
+timestamp =  now.strftime('%Y-%m-%d %H:%M')
+equipament = 1
+
+ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
+
+for linha in ref_arquivo:
+    valores = linha.split()
+    host = valores[0].replace(",","")
+    user = valores[1].replace(",","")
+    password = valores[2].replace(",","")
+    db = valores[3].replace(",","")
+
+ref_arquivo.close()
+
+#Gravando dados no banco de dados
+connection = pymysql.connect(host=host,
+                             user=user,
+                             password=password,
+                             db=db,
+                             cursorclass=pymysql.cursors.DictCursor)
+
+try:
+    with connection.cursor() as cursor:
+        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (now, hosty, downloadComma, uploadComma))
+    connection.commit()
+
+finally:
+    connection.close()
+
 
 GPIO.cleanup()
