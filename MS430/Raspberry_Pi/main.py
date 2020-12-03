@@ -6,7 +6,6 @@ from datetime import datetime
 import time
 import pymysql.cursors
 
-
 from sensor_package.sensor_functions import *
 
 # Set up the GPIO and I2C communications bus
@@ -80,7 +79,7 @@ print(temperature)
 
 #Criação das variáveis
 now = datetime.now()
-timestamp =  now.strftime('%Y-%m-%d %H:%M')
+timestamp = now.strftime('%Y-%m-%d %H:%M')
 equipament = 1
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
