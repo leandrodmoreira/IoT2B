@@ -78,7 +78,7 @@ print("Aqui começa meu código")
 print(temperature)
 
 #Criação das variáveis
-timeStamp = 2020-12-03 09:28:13
+timeStamp = "2020-12-03 09:28:13"
 equipament = 1
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
