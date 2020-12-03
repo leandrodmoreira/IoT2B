@@ -78,8 +78,7 @@ print("Aqui começa meu código")
 print(temperature)
 
 #Criação das variáveis
-now = datetime.now()
-timestamp = now.strftime('%Y-%m-%d %H:%M')
+timeStamp = 2020-12-03 09:28:13
 equipament = 1
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
@@ -102,8 +101,8 @@ connection = pymysql.connect(host=host,
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`) VALUES (%s, %s, %s, %s)"
-        cursor.execute(sql, (now, hosty, downloadComma, uploadComma))
+        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`) VALUES (%s, %s, %s)"
+        cursor.execute(sql, (timeStamp, equipament, temperature))
     connection.commit()
 
 finally:
