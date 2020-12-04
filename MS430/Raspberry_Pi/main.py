@@ -101,7 +101,7 @@ connection = pymysql.connect(host='localhost',
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`) VALUES (%s, %s, %s)"
+        sql = "INSERT INTO `homeiot`.`airData` (`timeStamp`, `equipament` , `temperature`) VALUES (%s, %s, %s)"
         cursor.execute(sql, (timeStamp, equipament, temperature))
     connection.commit()
 
