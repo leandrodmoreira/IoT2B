@@ -96,12 +96,12 @@ ref_arquivo.close()
 connection = pymysql.connect(host='localhost',
                              user='root',
                              password='Wall@1979',
-                             db=db,
+                             db='homeiot',
                              cursorclass=pymysql.cursors.DictCursor)
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `homeiot`.`airData` (`timeStamp`, `equipament` , `temperature`) VALUES (%s, %s, %s)"
+        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`) VALUES (%s, %s, %s)"
         cursor.execute(sql, (timeStamp, equipament, temperature))
     connection.commit()
 
