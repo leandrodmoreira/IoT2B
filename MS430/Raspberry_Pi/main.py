@@ -84,7 +84,7 @@ print("Aqui começa meu código")
 
 print(temperature)
 print(humidity)
-print(air_data['P_pa'])
+print(air_data['P_Pa'])
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
