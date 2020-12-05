@@ -26,8 +26,6 @@ while (not GPIO.event_detected(READY_pin)):
   
 air_data = get_air_data(I2C_bus)
 
-gasResistence = get_G_READ
-
 # Then print all the values onto the screen
 # writeAirData(None, air_data, False)
 
@@ -86,7 +84,7 @@ print("Aqui começa meu código")
 
 print(temperature)
 print(humidity)
-print(gasResistence)
+print(air_data['P_pa'])
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
