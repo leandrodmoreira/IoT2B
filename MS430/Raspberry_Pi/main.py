@@ -82,8 +82,7 @@ print("Temperature = {:.1f} ".format(temperature) + CELSIUS_SYMBOL)
 print("_________________________________________________")
 print("Aqui começa meu código")
 
-#pressure = air_data['P_Pa']
-pressure = 1
+pressure = air_data['P_Pa']
 gasResistence = air_data['G_ohm']
 
 print(temperature)
