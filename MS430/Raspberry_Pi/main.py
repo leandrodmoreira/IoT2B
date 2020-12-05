@@ -93,10 +93,10 @@ for linha in ref_arquivo:
 ref_arquivo.close()
 
 #Gravando dados no banco de dados
-connection = pymysql.connect(host='localhost',
-                             user='root',
-                             password='Wall@1979',
-                             db='homeiot',
+connection = pymysql.connect(host=host,
+                             user=user,
+                             password=password,
+                             db=db,
                              cursorclass=pymysql.cursors.DictCursor)
 
 try:
