@@ -27,7 +27,7 @@ while (not GPIO.event_detected(READY_pin)):
 air_data = get_air_data(I2C_bus)
 
 # Then print all the values onto the screen
-# writeAirData(None, air_data, False)
+writeAirData(None, air_data, False)
 
 # Or you can use the values directly
 print("The temperature is: {:.1f} ".format(air_data['T_C']) + air_data['C_unit'])
@@ -85,6 +85,8 @@ print("Aqui começa meu código")
 print(temperature)
 print(humidity)
 print(air_data['P_Pa'])
+print(air_data['H_pc'])
+print(air_data['G_ohm'])
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
