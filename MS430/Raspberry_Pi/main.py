@@ -79,7 +79,7 @@ if ((raw_data[0] & TEMPERATURE_SIGN_MASK) != 0):
 # Print the temperature: the units are degrees Celsius.
 print("Temperature = {:.1f} ".format(temperature) + CELSIUS_SYMBOL)
 
-print("_________________________________________________")
+print("__________________________________________________")
 print("Aqui começa meu código")
 
 pressure = air_data['P_Pa']
