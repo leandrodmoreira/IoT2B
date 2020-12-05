@@ -1,4 +1,3 @@
-
 #  Part of that code belongs to Metriful Ltd.
 #  Licensed under the MIT License - for further details see Metriful Ltd LICENSE.txt file.
 
@@ -6,7 +5,6 @@ from datetime import datetime
 import time
 import pymysql.cursors
 
-#Criação das variáveis
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
 hosty = 1
@@ -26,36 +24,12 @@ while (not GPIO.event_detected(READY_pin)):
   
 air_data = get_air_data(I2C_bus)
 
-# Then print all the values onto the screen
-writeAirData(None, air_data, False)
-
-# Or you can use the values directly
-print("The temperature is: {:.1f} ".format(air_data['T_C']) + air_data['C_unit'])
-print("The humidity is: {:.1f} %".format(air_data['H_pc']))
-
-# Temperature can also be output in Fahrenheit units
-print("The temperature is: {:.1f} ".format(air_data['T_F']) + air_data['F_unit'])
-
-# The default temperature unit can be set in sensor_functions.py and used like:
-print("The temperature is: {:.1f} ".format(air_data['T']) + air_data['T_unit'])
-
-print("-----------------------------")
-
-# 2. Advanced: read and decode only the humidity value
-
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
 # Decode the humidity: the first received byte is the integer part, the 
 # second byte is the fractional part (to one decimal place).
 humidity = raw_data[0] + float(raw_data[1])/10.0
-
-# Print it: the units are percentage relative humidity.
-print("Humidity = {:.1f} %".format(humidity))
-
-print("-----------------------------")
-
-# 3. Advanced: read and decode only the temperature value (Celsius)
 
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, T_READ, T_BYTES)
@@ -75,9 +49,6 @@ temperature = temp_positive_integer + float(temp_fraction)/10.0
 if ((raw_data[0] & TEMPERATURE_SIGN_MASK) != 0):
   # The bit is a 1: temperature is negative
   temperature = -temperature
-
-# Print the temperature: the units are degrees Celsius.
-print("Temperature = {:.1f} ".format(temperature) + CELSIUS_SYMBOL)
 
 print("__________________________________________________")
 print("Aqui começa meu código")
@@ -116,6 +87,3 @@ try:
 
 finally:
     connection.close()
-
-
-GPIO.cleanup()
