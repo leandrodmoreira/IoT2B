@@ -82,8 +82,7 @@ print("Temperature = {:.1f} ".format(temperature) + CELSIUS_SYMBOL)
 print("_________________________________________________")
 print("Aqui começa meu código")
 
-#pressure = air_data['P_Pa']
-pressure = 1000.5
+pressure = air_data['P_Pa']
 gasResistence = air_data['G_ohm']
 
 print(temperature)
@@ -111,7 +110,7 @@ connection = pymysql.connect(host=host,
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`, `humidity` , `pressure`, `gasResistence`) VALUES (%s, %s, %s, %s , %s, %s)"
+        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`, `humidity` , `pressure`, `gasResistence`) VALUES (%s, %s, %s, %s, %s, %s)"
         cursor.execute(sql, (timeStamp, equipament, temperature, humidity, pressure, gasResistence))
     connection.commit()
 
