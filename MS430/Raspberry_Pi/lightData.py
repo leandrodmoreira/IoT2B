@@ -27,12 +27,38 @@ light_data = get_light_data(I2C_bus)
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
-writeLightData(None, light_data, False)
-
 illuminance = light_data['illum_lux']
 whiteLightLevel =  light_data['white']
 
 print(illuminance)
 print(whiteLightLevel)
+
+ef_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
+
+for linha in ref_arquivo:
+    valores = linha.split()
+    host = valores[0].replace(",","")
+    user = valores[1].replace(",","")
+    password = valores[2].replace(",","")
+    db = valores[3].replace(",","")
+
+ref_arquivo.close()
+
+#Gravando dados no banco de dados
+connection = pymysql.connect(host=host,
+                             user=user,
+                             password=password,
+                             db=db,
+                             cursorclass=pymysql.cursors.DictCursor)
+
+try:
+    with connection.cursor() as cursor:
+        sql = "INSERT INTO `lightData` (`timeStamp`, `equipament` , `illumLux`, `white`) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (timeStamp, equipament, illumLux, white))
+    connection.commit()
+
+finally:
+    connection.close()
+
 
 GPIO.cleanup()
