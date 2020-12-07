@@ -87,3 +87,5 @@ try:
 
 finally:
     connection.close()
+
+GPIO.cleanup()
