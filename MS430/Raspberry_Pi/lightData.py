@@ -32,4 +32,6 @@ writeLightData(None, light_data, False)
 illum_lux = raw_data[0]
 illum_lux1 = raw_data[1]
 
+print(illum_lux, illum_lux1)
+
 GPIO.cleanup()
