@@ -27,12 +27,6 @@ light_data = get_light_data(I2C_bus)
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
-illum_lux = raw_data[0]
-illum_lux1 = raw_data[1]
-illum_lux2 = raw_data[2]
-
-print(illum_lux)
-print(illum_lux1)
-print(illum_lux2)
+writeLightData(None, light_data, False)
 
 GPIO.cleanup()
