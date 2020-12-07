@@ -29,4 +29,7 @@ raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
 writeLightData(None, light_data, False)
 
+illum_lux = raw_data[0]
+illum_lux1 = raw_data[1]
+
 GPIO.cleanup()
