@@ -54,7 +54,7 @@ connection = pymysql.connect(host=host,
 try:
     with connection.cursor() as cursor:
         sql = "INSERT INTO `lightData` (`timeStamp`, `equipament` , `illumLux`, `white`) VALUES (%s, %s, %s, %s)"
-        cursor.execute(sql, (timeStamp, equipament, illumLux, white))
+        cursor.execute(sql, (timeStamp, equipament, illuminance, whiteLightLevel))
     connection.commit()
 
 finally:
