@@ -33,7 +33,7 @@ whiteLightLevel =  light_data['white']
 print(illuminance)
 print(whiteLightLevel)
 
-ef_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
+ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
 for linha in ref_arquivo:
     valores = linha.split()
