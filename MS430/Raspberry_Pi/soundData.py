@@ -29,6 +29,12 @@ raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
 writeSoundData(None, sound_data, False)
 
+print('_________')
+
+print(sound_data['SPL_dBA'])
+print(['SPL_bands_dB'])
+print(sound_data['peak_amp_mPa'])
+
 '''
 illuminance = light_data['illum_lux']
 whiteLightLevel =  light_data['white']
