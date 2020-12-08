@@ -32,7 +32,7 @@ writeSoundData(None, sound_data, False)
 print('_________')
 
 print(sound_data['SPL_dBA'])
-print(['SPL_bands_dB'])
+print(sound_data['SPL_bands_dB'])
 print(sound_data['peak_amp_mPa'])
 
 '''
