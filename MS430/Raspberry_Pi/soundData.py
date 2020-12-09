@@ -32,21 +32,10 @@ writeSoundData(None, sound_data, False)
 print('_________')
 
 aWeightedSPL = sound_data['SPL_dBA']
+peakSA = sound_data['peak_amp_mPa']
 
-
-
-print(sound_data['SPL_dBA'])
-print(sound_data['SPL_bands_dB'])
-print(sound_data['peak_amp_mPa'])
 print(aWeightedSPL)
-print(raw_data[0])
-
-'''
-illuminance = light_data['illum_lux']
-whiteLightLevel =  light_data['white']
-
-print(illuminance)
-print(whiteLightLevel)
+print(peakSA)
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
@@ -68,13 +57,12 @@ connection = pymysql.connect(host=host,
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `lightData` (`timeStamp`, `equipament` , `illumLux`, `white`) VALUES (%s, %s, %s, %s)"
-        cursor.execute(sql, (timeStamp, equipament, illuminance, whiteLightLevel))
+        sql = "INSERT INTO `soundData` (`timeStamp`, `equipament`, `aweightedSPL, `peakSA`) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (timeStamp, equipament, aWeightedSPL, peakSA))
     connection.commit()
 
 finally:
     connection.close()
 
-'''
 
 GPIO.cleanup()
