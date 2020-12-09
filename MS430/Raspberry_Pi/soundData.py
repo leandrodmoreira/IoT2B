@@ -32,18 +32,13 @@ writeSoundData(None, sound_data, False)
 print('_________')
 
 aWeightedSPL = sound_data['SPL_dBA']
-fBand1SPL = sound_data['SPL_bands_dB',0]
-fBand2SPL = sound_data['SPL_bands_dB',0]
-fBand3SPL = sound_data['SPL_bands_dB',0]
-fBand4SPL = sound_data['SPL_bands_dB',0]
-fBand5SPL = sound_data['SPL_bands_dB',0]
-fBand6SPL = sound_data['SPL_bands_dB',0]
+
 
 
 print(sound_data['SPL_dBA'])
 print(sound_data['SPL_bands_dB'])
 print(sound_data['peak_amp_mPa'])
-print(fBand1SPL)
+print(aWeightedSPL)
 
 '''
 illuminance = light_data['illum_lux']
