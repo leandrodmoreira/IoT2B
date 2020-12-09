@@ -39,6 +39,7 @@ print(sound_data['SPL_dBA'])
 print(sound_data['SPL_bands_dB'])
 print(sound_data['peak_amp_mPa'])
 print(aWeightedSPL)
+print(sound_data[0])
 
 '''
 illuminance = light_data['illum_lux']
