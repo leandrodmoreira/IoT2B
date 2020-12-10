@@ -31,9 +31,11 @@ print('_________')
 
 aWeightedSPL = sound_data['SPL_dBA']
 peakSA = sound_data['peak_amp_mPa']
+stable = sound_data['stable']
 
 print(aWeightedSPL)
 print(peakSA)
+print(stable)
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
