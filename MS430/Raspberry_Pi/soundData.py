@@ -59,7 +59,7 @@ connection = pymysql.connect(host=host,
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `soundData` (`timeStamp`, `equipament`, `aweightedSPL`, `freqBand1', `freqBand2`,`freqBand3`, `freqBand4`, `freqBand5`,`freqBand6` `peakSA`) VALUES (%s, %s, %s, %s)"
+        sql = "INSERT INTO `soundData` (`timeStamp`, `equipament`, `aweightedSPL`, `freqBand1', `freqBand2`,`freqBand3`, `freqBand4`, `freqBand5` ,`freqBand6`, `peakSA`) VALUES (%s, %s, %s, %s)"
         cursor.execute(sql, (timeStamp, equipament, aWeightedSPL, freqBand1, freqBand2, freqBand3, freqBand4, freqBand5, freqBand6, peakSA))
     connection.commit()
 
