@@ -22,7 +22,7 @@ I2C_bus.write_byte(i2c_7bit_address, ON_DEMAND_MEASURE_CMD)
 while (not GPIO.event_detected(READY_pin)):
   sleep(0.05)
 
-sound_data = get_sound_data(I2C_bus)
+air_quality_data = get_air_quality_data(I2C_bus)
 
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
