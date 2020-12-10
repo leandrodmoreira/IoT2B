@@ -39,7 +39,7 @@ print(aWeightedSPL)
 print(peakSA)
 print(stable)
 print(raw_data)
-sound_data['SPL_bands_dB'][i]
+print(sound_data['SPL_bands_dB'][i])
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
