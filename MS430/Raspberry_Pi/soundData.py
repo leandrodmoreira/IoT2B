@@ -32,6 +32,13 @@ writeSoundData(None, sound_data, False)
 print('_________')
 
 aWeightedSPL = sound_data['SPL_dBA']
+freqBand1 = sound_data['SPL_bands_dB'][0]
+freqBand2 = sound_data['SPL_bands_dB'][1]
+freqBand3 = sound_data['SPL_bands_dB'][2]
+freqBand4 = sound_data['SPL_bands_dB'][3]
+freqBand5 = sound_data['SPL_bands_dB'][4]
+freqBand6 = sound_data['SPL_bands_dB'][5]
+
 peakSA = sound_data['peak_amp_mPa']
 stable = sound_data['stable']
 
