@@ -27,6 +27,8 @@ sound_data = get_sound_data(I2C_bus)
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
+writeSoundData(None, sound_data, False)
+
 print('_________')
 
 aWeightedSPL = sound_data['SPL_dBA']
