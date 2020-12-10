@@ -29,8 +29,6 @@ raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
 writeSoundData(None, sound_data, False)
 
-print('_________')
-
 aWeightedSPL = sound_data['SPL_dBA']
 freqBand1 = sound_data['SPL_bands_dB'][0]
 freqBand2 = sound_data['SPL_bands_dB'][1]
@@ -38,15 +36,8 @@ freqBand3 = sound_data['SPL_bands_dB'][2]
 freqBand4 = sound_data['SPL_bands_dB'][3]
 freqBand5 = sound_data['SPL_bands_dB'][4]
 freqBand6 = sound_data['SPL_bands_dB'][5]
-
 peakSA = sound_data['peak_amp_mPa']
 stable = sound_data['stable']
-
-print(aWeightedSPL)
-print(peakSA)
-print(stable)
-print(raw_data)
-print(sound_data['SPL_bands_dB'][0])
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
@@ -68,8 +59,8 @@ connection = pymysql.connect(host=host,
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `soundData` (`timeStamp`, `equipament`, `aweightedSPL`, `peakSA`) VALUES (%s, %s, %s, %s)"
-        cursor.execute(sql, (timeStamp, equipament, aWeightedSPL, peakSA))
+        sql = "INSERT INTO `soundData` (`timeStamp`, `equipament`, `aweightedSPL`, `freqBand1', `freqBand2`,`freqBand3`, `freqBand4`, `freqBand5`,`freqBand6` `peakSA`) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (timeStamp, equipament, aWeightedSPL, freqBand1, freqBand2, freqBand3, freqBand4, freqBand5, freqBand6, peakSA))
     connection.commit()
 
 finally:
