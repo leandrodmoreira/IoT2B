@@ -36,6 +36,7 @@ stable = sound_data['stable']
 print(aWeightedSPL)
 print(peakSA)
 print(stable)
+print(raw_data)
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
