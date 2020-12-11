@@ -12,6 +12,7 @@ equipament = 1
 
 from sensor_package.sensor_functions import *
 
+
 # Set up the GPIO and I2C communications bus
 (GPIO, I2C_bus) = SensorHardwareSetup()
 
