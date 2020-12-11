@@ -22,7 +22,7 @@ while True:
 
     # Now wait for the ready signal (falling edge) before continuing
     while (not GPIO.event_detected(READY_pin)):
-    sleep(0.05)
+        sleep(0.05)
 
     air_quality_data = get_air_quality_data(I2C_bus)
 
