@@ -28,7 +28,7 @@ air_quality_data = get_air_quality_data(I2C_bus)
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
-writeAirQualityData(None,air_quality_data,true)
+writeAirQualityData(None,air_quality_data,True)
 
 airQualityIndex = air_quality_data['AQI']
 estimatedCarbonDioxide = air_quality_data['CO2e']
