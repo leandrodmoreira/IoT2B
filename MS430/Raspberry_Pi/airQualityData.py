@@ -28,19 +28,38 @@ air_quality_data = get_air_quality_data(I2C_bus)
 # Get the data from the MS430
 raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 
-writeAirQualityData(None,air_quality_data,False)
-
-writeAirQualityData(None,air_quality_data,True)
+writeAirQualityData(None,air_quality_data,true)
 
 airQualityIndex = air_quality_data['AQI']
 estimatedCarbonDioxide = air_quality_data['CO2e']
 equivalentBreathVOCConcentration = air_quality_data['bVOC']
 airQualityIAccurancy = air_quality_data['AQI_accuracy']
 
-print(airQualityIndex)
-print(estimatedCarbonDioxide)
-print(equivalentBreathVOCConcentration)
-print(airQualityIAccurancy)
+ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
+for linha in ref_arquivo:
+    valores = linha.split()
+    host = valores[0].replace(",","")
+    user = valores[1].replace(",","")
+    password = valores[2].replace(",","")
+    db = valores[3].replace(",","")
+
+ref_arquivo.close()
+
+#Gravando dados no banco de dados
+connection = pymysql.connect(host=host,
+                             user=user,
+                             password=password,
+                             db=db,
+                             cursorclass=pymysql.cursors.DictCursor)
+
+try:
+    with connection.cursor() as cursor:
+        sql = "INSERT INTO `airQualityData` (`timeStamp`, `equipament`, `AQI`, `CO2e`, `bVOC`, `AQI_accuracy`) VALUES (%s, %s, %s, %s, %s, %s)"
+        cursor.execute(sql, (timeStamp, equipament, airQualityIndex, estimatedCarbonDioxide, equivalentBreathVOCConcentration, airQualityIAccurancy))
+    connection.commit()
+
+finally:
+    connection.close()
 
 GPIO.cleanup()
