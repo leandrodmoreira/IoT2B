@@ -47,5 +47,6 @@ while True:
     GPIO.cleanup()
 
     cont = cont + 1
+    print(cont)
 
     time.sleep(3)
