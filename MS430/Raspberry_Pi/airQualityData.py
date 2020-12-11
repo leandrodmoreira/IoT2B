@@ -31,4 +31,15 @@ writeAirQualityData(None,air_quality_data,False)
 
 writeAirQualityData(None,air_quality_data,True)
 
+airQualityIndex = air_quality_data['AQI']
+estimatedCarbonDioxide = air_quality_data['CO2e']
+equivalentBreathVOCConcentration = air_quality_data['bVOC']
+airQualityIAccurancy = air_quality_data['AQI_accuracy']
+
+print(air_quality_data['AQI'])
+print(air_quality_data['CO2e'])
+print(air_quality_data['bVOC'])
+print(air_quality_data['AQI_accuracy'])
+
+
 GPIO.cleanup()
