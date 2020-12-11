@@ -9,6 +9,7 @@ now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
 hosty = 1
 equipament = 1
+cont = 0
 
 from sensor_package.sensor_functions import *
 
@@ -44,5 +45,7 @@ while True:
     print(airQualityIAccurancy)
 
     GPIO.cleanup()
+
+    cont = cont + 1
 
     time.sleep(3)
