@@ -62,26 +62,6 @@ print(humidity)
 print(pressure)
 print(gasResistence)
 
-from oauth2client.service_account import ServiceAccountCredentials
-
-scope = ['https://spreadsheets.google.com/feeds']
-
-credentials = ServiceAccountCredentials.from_json_keyfile_name('perfect-transit-298617-ae8840d45b6e.json', scope)
-
-gc = gspread.authorize(credentials)
-
-wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
-
-worksheet = wks.get_worksheet(0)
-
-worksheet.update_acell('A1', 'ID')
-worksheet.update_acell('B1', 'TimeStamp')
-worksheet.update_acell('C1', 'Equipament')
-worksheet.update_acell('D1', 'temperature')
-worksheet.update_acell('E1', 'humidity')
-worksheet.update_acell('F1', 'pressure')
-worksheet.update_acell('G1', 'GasResistence')
-
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
 for linha in ref_arquivo:
@@ -108,5 +88,25 @@ try:
 
 finally:
     connection.close()
+
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = ['https://spreadsheets.google.com/feeds']
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name('perfect-transit-298617-ae8840d45b6e.json', scope)
+
+gc = gspread.authorize(credentials)
+
+wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
+
+worksheet = wks.get_worksheet(0)
+
+worksheet.update_acell('A1', 'ID')
+worksheet.update_acell('B1', 'TimeStamp')
+worksheet.update_acell('C1', 'Equipament')
+worksheet.update_acell('D1', 'temperature')
+worksheet.update_acell('E1', 'humidity')
+worksheet.update_acell('F1', 'pressure')
+worksheet.update_acell('G1', 'GasResistence')
 
 GPIO.cleanup()
