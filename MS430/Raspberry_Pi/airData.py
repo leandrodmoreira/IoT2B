@@ -101,12 +101,12 @@ wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
 
 worksheet = wks.get_worksheet(0)
 
-lineData = {timeStamp: equipament}
-
 cel = 2
 colums = 1
 
-worksheet.update_cell(cel, colums,lineData)
+worksheet.update_acell('A{cel}', timeStamp)
+worksheet.update_acell('B{cel}', equipament)
+worksheet.update_acell('C{cel}', temperature)
 
 cel += 1
 
