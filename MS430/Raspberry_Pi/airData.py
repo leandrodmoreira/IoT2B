@@ -101,11 +101,13 @@ wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
 
 worksheet = wks.get_worksheet(0)
 
-worksheet.update_acell('A2', timeStamp)
-worksheet.update_acell('B2', equipament)
-worksheet.update_acell('C2', temperature)
-worksheet.update_acell('D2', humidity)
-worksheet.update_acell('E2', pressure)
-worksheet.update_acell('F2', gasResistence)
+lineData = {timeStamp: equipament}
+
+cel = 2
+
+worksheet.update_cell(cel, colums,lineData)
+
+cel += 1
+
 
 GPIO.cleanup()
