@@ -101,12 +101,17 @@ wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
 
 worksheet = wks.get_worksheet(0)
 
-cel = 2
-colums = 1
+cel = 1
 
 worksheet.update_acell("A%s"%(cel), timeStamp)
+worksheet.update_acell("B%s"%(cel), equipament)
+worksheet.update_acell("C%s"%(cel), temperature)
+worksheet.update_acell("D%s"%(cel), humidity)
+worksheet.update_acell("E%s"%(cel), pressure)
+worksheet.update_acell("F%s"%(cel), gasResistence)
 
 cel += 1
 
+print(cel)
 
 GPIO.cleanup()
