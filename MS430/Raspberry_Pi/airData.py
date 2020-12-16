@@ -101,7 +101,7 @@ wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
 
 worksheet = wks.get_worksheet(0)
 
-cel = 1
+cel = 2
 
 worksheet.update_acell("A%s"%(cel), timeStamp)
 worksheet.update_acell("B%s"%(cel), equipament)
