@@ -104,8 +104,7 @@ worksheet = wks.get_worksheet(0)
 cel = 2
 colums = 1
 
-celInfo = "A%s"%(cel)
-print(celInfo)
+worksheet.update_acell("A%s"%(cel), timeStamp)
 
 cel += 1
 
