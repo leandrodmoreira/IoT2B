@@ -104,9 +104,8 @@ worksheet = wks.get_worksheet(0)
 cel = 2
 colums = 1
 
-worksheet.update_acell('A{cel}', timeStamp)
-worksheet.update_acell('B{cel}', equipament)
-worksheet.update_acell('C{cel}', temperature)
+celInfo = "A%s"%(cel)
+print(celInfo)
 
 cel += 1
 
