@@ -104,6 +104,7 @@ worksheet = wks.get_worksheet(0)
 lineData = {timeStamp: equipament}
 
 cel = 2
+colums = 1
 
 worksheet.update_cell(cel, colums,lineData)
 
