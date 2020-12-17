@@ -89,27 +89,4 @@ try:
 finally:
     connection.close()
 
-from oauth2client.service_account import ServiceAccountCredentials
-
-scope = ['https://spreadsheets.google.com/feeds']
-
-credentials = ServiceAccountCredentials.from_json_keyfile_name('perfect-transit-298617-ae8840d45b6e.json', scope)
-
-gc = gspread.authorize(credentials)
-
-wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
-
-worksheet = wks.get_worksheet(0)
-
-cel = 2
-
-worksheet.update_acell("A%s"%(cel), timeStamp)
-worksheet.update_acell("A%s"%(cel), timeStamp)
-worksheet.update_acell("B%s"%(cel), equipament)
-worksheet.update_acell("C%s"%(cel), temperature)
-worksheet.update_acell("D%s"%(cel), humidity)
-worksheet.update_acell("E%s"%(cel), pressure)
-worksheet.update_acell("F%s"%(cel), gasResistence)
-
-
 GPIO.cleanup()
