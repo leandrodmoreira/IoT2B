@@ -89,4 +89,9 @@ try:
 finally:
     connection.close()
 
+valor1 = timeStamp
+valor2 = id
+
+gsAirData(valor1,valor2)
+
 GPIO.cleanup()

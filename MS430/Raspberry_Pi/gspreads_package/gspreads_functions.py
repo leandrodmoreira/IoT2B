@@ -8,12 +8,15 @@ def gsAirData (valor1,valor2):
 
     gc = gspread.authorize(credentials)
 
+    #Planilha Teste Python
     wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
 
     worksheet = wks.get_worksheet(0)
 
     worksheet.update_acell('A1', valor1)
     worksheet.update_acell('B1', valor2)
+
+
 
 def soma(A,B):
   C = A + B
