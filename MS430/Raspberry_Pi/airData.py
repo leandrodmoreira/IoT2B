@@ -6,6 +6,8 @@ import time
 import pymysql.cursors
 import gspread
 
+from gspreads_package.gspreads_functions import *
+
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
 hosty = 1
