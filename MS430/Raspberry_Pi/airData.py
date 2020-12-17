@@ -91,9 +91,6 @@ try:
 finally:
     connection.close()
 
-valor1 = timeStamp
-valor2 = equipament
-
-gsAirData(valor1,valor2)
+gsAirData(timeStamp, equipament, temperature, humidity, pressure, gasResistence)
 
 GPIO.cleanup()

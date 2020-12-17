@@ -1,4 +1,4 @@
-def gsAirData (valor1,valor2):
+def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResistence):
     import gspread
     from oauth2client.service_account import ServiceAccountCredentials
 
@@ -13,8 +13,12 @@ def gsAirData (valor1,valor2):
 
     worksheet = wks.get_worksheet(0)
 
-    worksheet.update_acell('A1', valor1)
-    worksheet.update_acell('B1', valor2)
+    worksheet.update_acell('A2', timeStamp)
+    worksheet.update_acell('B2', equipament)
+    worksheet.update_acell('C2', temperature)
+    worksheet.update_acell('D2', humidity)
+    worksheet.update_acell('E2', pressure)
+    worksheet.update_acell('F2', gasResistence)
 
 
 
