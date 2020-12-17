@@ -92,7 +92,7 @@ finally:
     connection.close()
 
 valor1 = timeStamp
-valor2 = id
+valor2 = equipament
 
 gsAirData(valor1,valor2)
 
