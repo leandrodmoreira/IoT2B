@@ -20,10 +20,23 @@ def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResist
     worksheet.update_acell('E2', pressure)
     worksheet.update_acell('F2', gasResistence)
 
+def gslightData (timeStamp, equipament, illuminance, whiteLightLevel):
+    import gspread
+    from oauth2client.service_account import ServiceAccountCredentials
 
+    scope = ['https://spreadsheets.google.com/feeds']
 
-def soma(A,B):
-  C = A + B
-  print('C =', C)
-  return C
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/gspreads_package/perfect-transit-298617-ae8840d45b6e.json', scope)
+
+    gc = gspread.authorize(credentials)
+
+    #singleLightData Sheet
+    wks = gc.open_by_key('13NA7k2DcbpV22PRfGidvw-zqeLpwhJd7ccJRBny1pFU')
+
+    worksheet = wks.get_worksheet(0)
+
+    worksheet.update_acell('A2', timeStamp)
+    worksheet.update_acell('B2', equipament)
+    worksheet.update_acell('C2', illuminance)
+    worksheet.update_acell('D2', whiteLightLevel)
 

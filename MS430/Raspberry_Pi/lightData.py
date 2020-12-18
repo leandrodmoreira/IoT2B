@@ -4,6 +4,7 @@
 from datetime import datetime
 import time
 import pymysql.cursors
+from gspreads_package.gspreads_functions import *
 
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
@@ -60,5 +61,6 @@ try:
 finally:
     connection.close()
 
+gslightData (timeStamp, equipament, illuminance, whiteLightLevel)
 
 GPIO.cleanup()
