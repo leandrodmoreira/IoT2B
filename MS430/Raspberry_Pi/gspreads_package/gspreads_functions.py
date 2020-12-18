@@ -4,7 +4,8 @@ def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResist
 
     scope = ['https://spreadsheets.google.com/feeds']
 
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('perfect-transit-298617-ae8840d45b6e.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('/Public/Dev/IoT2B/MS430/Raspberry_Pi/gspreads_package/ls
+    perfect-transit-298617-ae8840d45b6e.json', scope)
 
     gc = gspread.authorize(credentials)
 
