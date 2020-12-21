@@ -8,8 +8,8 @@ def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResist
 
     gc = gspread.authorize(credentials)
 
-    #Planilha Teste Python
-    wks = gc.open_by_key('17IaRGDBCB8k5O_HBfpVpc5qnyotOtEq6OR0LhzIRF_o')
+    #singleAirData Sheet
+    wks = gc.open_by_key('1qPT0JHCtQ9cID-0vLi6nqr8F2Db7m0U15Gfna7vBHqU')
 
     worksheet = wks.get_worksheet(0)
 
