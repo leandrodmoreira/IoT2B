@@ -4,6 +4,7 @@
 from datetime import datetime
 import time
 import pymysql.cursors
+from gspreads_package.gspreads_functions import *
 
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
@@ -66,5 +67,6 @@ try:
 finally:
     connection.close()
 
+gsSoundData (timeStamp, equipament, aWeightedSPL, freqBand1, freqBand2, freqBand3, freqBand4, freqBand5, freqBand6, peakSA)
 
 GPIO.cleanup()
