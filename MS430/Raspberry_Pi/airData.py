@@ -10,7 +10,6 @@ from gspreads_package.gspreads_functions import *
 
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
-hosty = 1
 equipament = 1
 
 from sensor_package.sensor_functions import *
@@ -54,6 +53,9 @@ if ((raw_data[0] & TEMPERATURE_SIGN_MASK) != 0):
   temperature = -temperature
 
 writeAirData(None, air_data, False)
+
+pressure = air_data['P_Pa']
+gasResistence = air_data['G_ohm']
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
