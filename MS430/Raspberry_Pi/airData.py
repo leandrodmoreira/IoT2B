@@ -53,16 +53,7 @@ if ((raw_data[0] & TEMPERATURE_SIGN_MASK) != 0):
   # The bit is a 1: temperature is negative
   temperature = -temperature
 
-print("__________________________________________________")
-print("Aqui começa meu código")
-
-pressure = air_data['P_Pa']
-gasResistence = air_data['G_ohm']
-
-print(temperature)
-print(humidity)
-print(pressure)
-print(gasResistence)
+writeAirData(None, air_data, False)
 
 ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
