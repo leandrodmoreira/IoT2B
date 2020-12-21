@@ -61,6 +61,7 @@ try:
 finally:
     connection.close()
 
-gslightData (timeStamp, equipament, illuminance, whiteLightLevel)
+gsLightData (timeStamp, equipament, illuminance, whiteLightLevel)
+
 
 GPIO.cleanup()
