@@ -1,6 +1,8 @@
 import pymysql.cursors
 from connection_package.enviroment import *
 
+#connection
+
 timeStamp = '2020-12-22 12:00'
 equipament = 1
 temperature = 26,6
