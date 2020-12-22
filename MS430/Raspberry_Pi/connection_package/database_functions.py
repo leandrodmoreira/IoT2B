@@ -1,5 +1,5 @@
 import pymysql.cursors
-from connection_package.enviroment import *
+from enviroment import *
 
 #connection
 
