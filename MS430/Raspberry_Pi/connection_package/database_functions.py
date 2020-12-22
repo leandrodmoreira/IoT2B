@@ -10,9 +10,10 @@ humidity = 53,7
 pressure = 91402
 gasResistence = 4992
 
+
 #connection
 
-mysqlConnection(mysqlHost,mysqlUser,mysqlPassword,mysqlDb)
+mysqlConnection(mysqlHost, mysqlUser, mysqlPassword, mysqlDb)
 
 connection = pymysql.connect(host=mysqlHost,
                              user=mysqlUser,
