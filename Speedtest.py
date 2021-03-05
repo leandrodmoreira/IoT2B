@@ -1,4 +1,5 @@
-from speedtest import speedtest 
+# -*- coding: utf-8 -*-
+import speedtest 
 from datetime import datetime
 import time
 import pymysql.cursors
