@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-
-import speedtest as speedtest
+import speedtest
 from datetime import datetime
 import time
 import pymysql.cursors
