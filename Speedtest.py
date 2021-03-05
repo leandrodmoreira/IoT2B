@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import speedtest as speedtest 
 from datetime import datetime
 import time
