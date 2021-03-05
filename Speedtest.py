@@ -1,4 +1,4 @@
-import speedtest as speedtest 
+from speedtest import speedtest 
 from datetime import datetime
 import time
 import pymysql.cursors
