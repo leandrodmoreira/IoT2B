@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import speedtest as speedtest 
 from datetime import datetime
 import time
@@ -9,7 +10,7 @@ speed.get_best_server()
 #Criação das variáveis
 now = datetime.now()
 timestamp =  now.strftime('%Y-%m-%d %H:%M')
-hosty = 1
+equipament = 1
 download = repr(round(speed.download() / 1000 / 1000, 1))
 upload = repr(round(speed.upload () / 1000 / 1000, 1))
 
@@ -39,8 +40,8 @@ connection = pymysql.connect(host=host,
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `iot_speedtest` (`timestamp`, `host` , `download` , `upload`) VALUES (%s, %s, %s, %s)"
-        cursor.execute(sql, (now, hosty, downloadComma, uploadComma))
+        sql = "INSERT INTO `iot_speedtest` (`timestamp`, `equipament` , `download` , `upload`) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (now, equipament, downloadComma, uploadComma))
     connection.commit()
 
 finally:
