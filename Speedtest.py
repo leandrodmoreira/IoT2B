@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
 import pyspeedtest
 from datetime import datetime
 import time
 import pymysql.cursors
 
-speed = speedtest.Speedtest()
+speed = pyspeedtest.Speedtest()
 speed.get_best_server()
 
-#Criação das variáveis
 now = datetime.now()
 timestamp =  now.strftime('%Y-%m-%d %H:%M')
 equipament = 1
@@ -17,8 +15,6 @@ upload = repr(round(speed.upload () / 1000 / 1000, 1))
 
 downloadComma = download.replace(".",",")
 uploadComma = upload.replace(".",",")
-
-#Lendo configurações do arquivo
 
 ref_arquivo = open("/home/leandro/Documents/Dev/Velocidade/dbconfig.txt","r")
 
@@ -31,7 +27,6 @@ for linha in ref_arquivo:
 
 ref_arquivo.close()
 
-#Gravando dados no banco de dados
 connection = pymysql.connect(host=host,
                              user=user,
                              password=password,
@@ -47,7 +42,7 @@ try:
 finally:
     connection.close()
 
-#Gravando dados no arquivo de log
+
 reader = "Timestamp, Download(Mbs), Upload(Mbps) \n"
 
 textoBruto = now.strftime('%Y-%m-%d %H:%M') + ';' + download + ';' + upload + "\n"
