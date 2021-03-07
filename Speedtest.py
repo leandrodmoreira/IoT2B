@@ -1,9 +1,9 @@
-import pyspeedtest
+import speedtest
 from datetime import datetime
 import time
 import pymysql.cursors
 
-speed = pyspeedtest.Speedtest()
+speed = speedtest.Speedtest()
 speed.get_best_server()
 
 now = datetime.now()
