@@ -1,6 +1,6 @@
 def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResistence):
     import gspread
-    from oauth2client.service_account import ServiceAccountCredentials
+    from google-auth.service_account import ServiceAccountCredentials
 
     scope = ['https://spreadsheets.google.com/feeds']
 
