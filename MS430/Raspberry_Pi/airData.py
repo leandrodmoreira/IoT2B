@@ -57,7 +57,7 @@ writeAirData(None, air_data, False)
 pressure = air_data['P_Pa']
 gasResistence = air_data['G_ohm']
 
-ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
+ref_arquivo = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
 for linha in ref_arquivo:
     valores = linha.split()
