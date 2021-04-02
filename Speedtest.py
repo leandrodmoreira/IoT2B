@@ -1,3 +1,4 @@
+#!/bin/env python3.7
 import speedtest
 from datetime import datetime
 import time
