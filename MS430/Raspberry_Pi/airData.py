@@ -4,9 +4,9 @@
 from datetime import datetime
 import time
 import pymysql.cursors
-import gspread
+#import gspread
 
-from gspreads_package.gspreads_functions import *
+#from gspreads_package.gspreads_functions import *
 
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
