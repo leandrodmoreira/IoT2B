@@ -4,7 +4,7 @@
 from datetime import datetime
 import time
 import pymysql.cursors
-from gspreads_package.gspreads_functions import *
+#from gspreads_package.gspreads_functions import *
 
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
@@ -33,7 +33,7 @@ whiteLightLevel =  light_data['white']
 
 writeLightData(None, light_data, False)
 
-ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
+ref_arquivo = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
 for linha in ref_arquivo:
     valores = linha.split()
@@ -60,7 +60,7 @@ try:
 finally:
     connection.close()
 
-gsLightData (timeStamp, equipament, illuminance, whiteLightLevel)
+#gsLightData (timeStamp, equipament, illuminance, whiteLightLevel)
 
 
 GPIO.cleanup()

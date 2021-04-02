@@ -4,7 +4,7 @@
 from datetime import datetime
 import time
 import pymysql.cursors
-from gspreads_package.gspreads_functions import *
+#from gspreads_package.gspreads_functions import *
 
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
@@ -40,7 +40,7 @@ freqBand6 = sound_data['SPL_bands_dB'][5]
 peakSA = sound_data['peak_amp_mPa']
 stable = sound_data['stable']
 
-ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
+ref_arquivo = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
 for linha in ref_arquivo:
     valores = linha.split()
@@ -67,6 +67,6 @@ try:
 finally:
     connection.close()
 
-gsSoundData (timeStamp, equipament, aWeightedSPL, freqBand1, freqBand2, freqBand3, freqBand4, freqBand5, freqBand6, peakSA)
+#gsSoundData (timeStamp, equipament, aWeightedSPL, freqBand1, freqBand2, freqBand3, freqBand4, freqBand5, freqBand6, peakSA)
 
 GPIO.cleanup()
