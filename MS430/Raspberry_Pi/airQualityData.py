@@ -35,7 +35,7 @@ estimatedCarbonDioxide = air_quality_data['CO2e']
 equivalentBreathVOCConcentration = air_quality_data['bVOC']
 airQualityIAccurancy = air_quality_data['AQI_accuracy']
 
-ref_arquivo = open("/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
+ref_arquivo = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
 for linha in ref_arquivo:
     valores = linha.split()
