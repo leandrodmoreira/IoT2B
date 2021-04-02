@@ -16,7 +16,7 @@ upload = repr(round(speed.upload () / 1000 / 1000, 1))
 downloadComma = download.replace(".",",")
 uploadComma = upload.replace(".",",")
 
-ref_arquivo = open("/home/leandro/Documents/Dev/Velocidade/dbconfig.txt","r")
+ref_arquivo = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
 for linha in ref_arquivo:
     valores = linha.split()
@@ -48,6 +48,3 @@ reader = "Timestamp, Download(Mbs), Upload(Mbps) \n"
 textoBruto = now.strftime('%Y-%m-%d %H:%M') + ';' + download + ';' + upload + "\n"
 
 texto = textoBruto.replace(".",",")
-
-print("Valor armazenado no banco de dados:")
-print(texto)
