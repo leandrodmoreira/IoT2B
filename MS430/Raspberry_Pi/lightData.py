@@ -31,7 +31,7 @@ raw_data = I2C_bus.read_i2c_block_data(i2c_7bit_address, H_READ, H_BYTES)
 illuminance = light_data['illum_lux']
 whiteLightLevel =  light_data['white']
 
-writeLightData(None, light_data, False)
+#writeLightData(None, light_data, False)
 
 ref_arquivo = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/dbconfig.txt","r")
 
