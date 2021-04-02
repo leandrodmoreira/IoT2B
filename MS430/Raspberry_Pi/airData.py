@@ -84,6 +84,6 @@ try:
 finally:
     connection.close()
 
-gsAirData(timeStamp, equipament, temperature, humidity, pressure, gasResistence)
+#gsAirData(timeStamp, equipament, temperature, humidity, pressure, gasResistence)
 
 GPIO.cleanup()
