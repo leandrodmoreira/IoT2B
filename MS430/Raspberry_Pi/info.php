@@ -13,7 +13,7 @@
             $database = "iot2b"; 
 
             # O hostname deve ser sempre localhost 
-            $hostname = "localhost";
+            $hostname = "192.168.0.38";
  
             # Conexão MySQL com PHP 7
             $conexao = mysqli_connect($hostname,$user,$password);
