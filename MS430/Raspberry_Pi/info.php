@@ -16,7 +16,7 @@
             $hostname = "localhost";
  
             # Conexão MySQL com PHP 7
-            $conexao = mysqli_connect('localhost','root','@cthum@1979');
+            $conexao = mysqli_connect('192.168.0.38','root','@cthum@1979');
             $banco = mysqli_select_db($conexao,'iot2b');
             mysqli_set_charset($conexao,'utf8');
  
