@@ -20,7 +20,7 @@
             $banco = mysqli_select_db($conexao,$database);
             mysqli_set_charset($conexao,'utf8');
  
-            $sql = mysqli_query($conexao,"select * from `iot2b`.`airData` order by id desc") or die("Erro");
+            $sql = mysqli_query($conexao,"select * from iot2b.airData order by id desc") or die("Erro");
             
             while($dados=mysqli_fetch_assoc($sql))
                 {   
