@@ -9,7 +9,7 @@
             echo "<br>";
 
             $user = "root"; 
-            $password = "Wall@1979"; 
+            $password = "@cthum@1979"; 
             $database = "homeiot"; 
 
             # O hostname deve ser sempre localhost 
