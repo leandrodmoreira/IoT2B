@@ -10,14 +10,14 @@
 
             $user = "root"; 
             $password = "@cthum@1979"; 
-            $database = "homeiot"; 
+            $database = "iot2b"; 
 
             # O hostname deve ser sempre localhost 
             $hostname = "localhost";
  
             # Conexão MySQL com PHP 7
-            $conexao = mysqli_connect('192.168.0.38','root','@cthum@1979');
-            $banco = mysqli_select_db($conexao,'iot2b');
+            $conexao = mysqli_connect($hostname,$user,$password);
+            $banco = mysqli_select_db($conexao,$database);
             mysqli_set_charset($conexao,'utf8');
  
             $sql = mysqli_query($conexao,"select * from airData order by id desc") or die("Erro");
