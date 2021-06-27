@@ -24,7 +24,7 @@
             
             while($dados=mysqli_fetch_assoc($sql))
                 {   
-                    echo $dados['id']'<br>';
+                    echo $dados['id'].'<br>';
                 }
         ?>
     </body>
