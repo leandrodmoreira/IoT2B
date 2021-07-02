@@ -1,4 +1,4 @@
-  ' #  Part of that code belongs to Metriful Ltd.
+#  Part of that code belongs to Metriful Ltd.
 #  Licensed under the MIT License - for further details see Metriful Ltd LICENSE.txt file.
 
 from datetime import datetime
