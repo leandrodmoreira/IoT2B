@@ -20,6 +20,8 @@
                     echo $dados['id'].'<br>';
                 }
             mysqli_close($conexao);
+            $erro = Erro;
+            echo $erro;
         ?>
     </body>
 </html>
