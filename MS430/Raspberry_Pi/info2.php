@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Iot 2 Home</title>
+        <title>PHP Info</title>
     </head>
     <body>
     <?php phpinfo(); ?>
