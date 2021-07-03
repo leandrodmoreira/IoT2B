@@ -13,15 +13,13 @@
             mysqli_select_db($conexao,iot2b);
             mysqli_set_charset($conexao,'utf8');
  
-            $sql = mysqli_query($conexao,"select * from airData order by id desc") or die("Erro");
+            $sql = mysqli_query($conexao,"select * from airData") or die("Erro");
             
             while($dados=mysqli_fetch_assoc($sql))
                 {   
                     echo $dados['id'].'<br>';
                 }
             mysqli_close($conexao);
-            $erro = Erro;
-            echo $erro;
         ?>
     </body>
 </html>
