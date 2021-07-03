@@ -21,6 +21,7 @@
                 }
             mysqli_close($conexao);
 
+            echo "Teste";
             echo $conexao;
             echo $sql;
             echo $dados;
