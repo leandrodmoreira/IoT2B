@@ -20,6 +20,11 @@
                     echo $dados['id'].'<br>';
                 }
             mysqli_close($conexao);
+
+            echo $conexao
+            echo $sql
+            echo $dados
+
         ?>
     </body>
 </html>
