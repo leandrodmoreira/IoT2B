@@ -3,29 +3,19 @@
         <title>Iot 2 Home</title>
     </head>
     <body>
-        <?php 
-            echo "<p>Lendo dados de Velocidade da Internet</p>";
-            echo "ID - Data / Hora - Equipamento - Download - Upload";
-            echo "<br>";
- 
-            # Conexão MySQL com PHP 7
-            $conexao = mysqli_connect('localhost','root','@cthum@1979','iot2b');
-            mysqli_select_db($conexao,iot2b);
-            mysqli_set_charset($conexao,'utf8');
- 
-            $sql = mysqli_query($conexao,"select * from airData") or die("Erro");
-            
-            while($dados=mysqli_fetch_assoc($sql))
-                {   
-                    echo $dados['id'].'<br>';
-                }
-            mysqli_close($conexao);
+        <?php
 
-            echo "Teste";
-            echo $conexao;
-            echo $sql;
-            echo $dados;
+        $query = mysqli_query($dbconnect, "SELECT * FROM user_review")
+        or die (mysqli_error($dbconnect));
 
-        ?>
+        while ($row = mysqli_fetch_array($query)) {
+    echo
+        "<tr>
+        <td>{$row['reviewer_name']}</td>
+        <td>{$row['star_rating']}</td>
+        <td>{$row['details']}</td>
+    </tr>;
+    }
+    ?>
     </body>
 </html>
