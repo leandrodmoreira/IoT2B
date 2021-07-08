@@ -8,7 +8,7 @@ Teste de HTML1
 
 $hostname = "localhost";
 $username = "root";
-$password = "@cthum@1979";
+$password = "";
 $db = "iot2b";
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
