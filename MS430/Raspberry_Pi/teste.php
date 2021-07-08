@@ -17,6 +17,8 @@ echo "$hostname";
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
+echo "$username";
+
 echo "$dbconnect";
 
 if ($dbconnect->connect_error) {
