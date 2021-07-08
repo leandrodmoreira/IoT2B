@@ -13,6 +13,8 @@ $username = "root";
 $password = "@cthum@1979";
 $db = "iot2b";
 
+echo "$hostname";
+
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
 if ($dbconnect->connect_error) {
