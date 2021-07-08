@@ -17,10 +17,10 @@ echo "$hostname";
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
+echo "$dbconnect";
+
 if ($dbconnect->connect_error) {
   die("Database connection failed: " . $dbconnect->connect_error);
-  echo "$dbconnect";
-
 }
 
 ?>
