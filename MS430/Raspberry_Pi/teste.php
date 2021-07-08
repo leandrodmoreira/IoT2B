@@ -2,7 +2,7 @@
 <html>
 <body>
 
-Teste de HTML.
+Teste de HTML1
 
 <?php
 
@@ -18,7 +18,7 @@ if ($dbconnect->connect_error) {
 }
 
 ?>
-
+Teste de HTML2
 <table border="1" align="center">
 <tr>
   <td>id</td>
@@ -38,6 +38,7 @@ while ($row = mysqli_fetch_array($query)) {
 }
 
 ?>
+Teste de HTML 3
 </table>
 </body>
 </html>
