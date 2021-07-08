@@ -6,9 +6,9 @@ Teste de HTML1
 
 <?php
 
-$hostname = "localhost";
+$hostname = "192.168.0.38";
 $username = "root";
-$password = "";
+$password = "@cthum@1979";
 $db = "iot2b";
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
