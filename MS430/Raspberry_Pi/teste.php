@@ -6,7 +6,7 @@ Teste de HTML1
 
 <?php
 
-$hostname = "192.168.0.38";
+$hostname = "locahost";
 $username = "root";
 $password = "@cthum@1979";
 $db = "iot2b";
