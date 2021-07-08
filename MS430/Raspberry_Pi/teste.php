@@ -1,21 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-    <head>
-        <title>Iot 2 Home</title>
-    </head>
-    <body>
-        <?php
+<body>
+<?php
 
-        $query = mysqli_query($dbconnect, "SELECT * FROM user_review")
-        or die (mysqli_error($dbconnect));
+$hostname = "localhost";
+$username = "root";
+$password = "@cthum@1979";
+$db = "iot2b";
 
-        while ($row = mysqli_fetch_array($query)) {
-    echo
-        "<tr>
-        <td>{$row['reviewer_name']}</td>
-        <td>{$row['star_rating']}</td>
-        <td>{$row['details']}</td>
-    </tr>;
-    }
-    ?>
-    </body>
+$dbconnect=mysqli_connect($hostname,$username,$password,$db);
+
+if ($dbconnect->connect_error) {
+  die("Database connection failed: " . $dbconnect->connect_error);
+}
+
+?>
+
+<table border="1" align="center">
+<tr>
+  <td>id</td>
+</tr>
+
+<?php
+
+$query = mysqli_query($dbconnect, "SELECT * FROM airData")
+   or die (mysqli_error($dbconnect));
+
+while ($row = mysqli_fetch_array($query)) {
+  echo
+   "<tr>
+    <td>{$row['id']}</td>
+   </tr>\n";
+
+}
+
+?>
+</table>
+</body>
 </html>
