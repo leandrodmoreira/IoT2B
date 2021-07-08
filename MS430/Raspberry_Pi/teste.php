@@ -6,7 +6,7 @@ Teste de HTML1
 
 <?php
 
-echo "Teste HTML 1.5"
+echo "Teste HTML 1.5";
 
 $hostname = "192.168.0.38";
 $username = "root";
