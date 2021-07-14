@@ -16,7 +16,7 @@ $db = "iot2b";
 echo "$hostname";
 echo "$username";
 echo "$password";
-//echo "$db;
+echo "$db;
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
