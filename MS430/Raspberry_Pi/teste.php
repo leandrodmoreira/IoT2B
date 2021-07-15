@@ -27,7 +27,7 @@ echo "$dbconnect";
 if ($dbconnect->connect_error) {
   die("Database connection failed: " . $dbconnect->connect_error);
 }
-
+echo "Connected Successfully.";
 ?>
 Teste de HTML2
 <table border="1" align="center">
