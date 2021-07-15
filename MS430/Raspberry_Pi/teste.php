@@ -20,8 +20,6 @@ echo "$db";
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
-mysql_errno(resource $link_identifier = NULL): int;
-
 echo "$username";
 
 echo "$dbconnect";
