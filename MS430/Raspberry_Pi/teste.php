@@ -20,7 +20,7 @@ echo "$db";
 
 //$dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
-$db = new MySQLi("localhost", "root", "@cthum@1979", "iot2b")
+$db = new MySQLi("localhost", "root", "@cthum@1979", "iot2b");
 
 
 
