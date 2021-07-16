@@ -18,7 +18,11 @@ echo "$username";
 echo "$password";
 echo "$db";
 
-$dbconnect=mysqli_connect($hostname,$username,$password,$db);
+//$dbconnect=mysqli_connect($hostname,$username,$password,$db);
+
+$db = new MySQLi("localhost", "root", "@cthum@1979", "iot2b")
+
+
 
 echo "$username";
 
@@ -29,7 +33,7 @@ if ($dbconnect->connect_error) {
 }
 echo "Connected Successfully.";
 ?>
-Teste de HTML2
+Teste de HTML3
 <table border="1" align="center">
 <tr>
   <td>id</td>
