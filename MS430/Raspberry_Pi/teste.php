@@ -22,8 +22,6 @@ echo "$db";
 
 $db = new MySQLi("192.168.0.38", "root", "@cthum@1979", "iot2b");
 
-
-
 echo "$username";
 
 echo "$dbconnect";
