@@ -1,4 +1,4 @@
-    def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResistence):
+def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResistence):
     import gspread
 
     from google.oauth2.service_account import ServiceAccountCredentials
