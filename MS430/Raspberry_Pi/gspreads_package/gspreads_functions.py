@@ -1,28 +1,36 @@
-def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResistence):
+    def gsAirData (timeStamp, equipament, temperature, humidity, pressure, gasResistence):
     import gspread
-    #from google-auth.service_account import ServiceAccountCredentials
-    from google.oauth2 import service_account
 
-    #scope = ['https://spreadsheets.google.com/feeds']
-
-    #credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/gspreads_package/perfect-transit-298617-ae8840d45b6e.json', scope)
-    credentials = service_account.Credentials.from_service_account_file('/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/gspreads_package/perfect-transit-298617-ae8840d45b6e.json')
-
-    scoped_credentials = credentials.with_scopes(['https://www.googleapis.com/auth/cloud-platform'])
-
+    from google.oauth2.service_account import ServiceAccountCredentials
+    scope = ['https://spreadsheets.google.com/feeds']
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('iot2bv2-ebd620022c11.json', scope)
     gc = gspread.authorize(credentials)
-
-    #singleAirData Sheet
-    wks = gc.open_by_key('1qPT0JHCtQ9cID-0vLi6nqr8F2Db7m0U15Gfna7vBHqU')
-
+    wks = gc.open_by_key('1CKtNQd9e1RU3ZovV4lix5TSiFR1gIbiHROgVGjOvxVI')
     worksheet = wks.get_worksheet(0)
 
-    worksheet.update_acell('A2', timeStamp)
-    worksheet.update_acell('B2', equipament)
-    worksheet.update_acell('C2', temperature)
-    worksheet.update_acell('D2', humidity)
-    worksheet.update_acell('E2', pressure)
-    worksheet.update_acell('F2', gasResistence)
+    arqCont = open("cont.txt","r")
+    linha = arqCont.read(100)
+
+    contA = 'A' + str(linha)
+    contB = 'B' + str(linha)
+    contC = 'C' + str(linha)
+    contD = 'D' + str(linha)
+    contE = 'E' + str(linha)
+    contF = 'F' + str(linha)
+
+    worksheet.update_acell(contA, timeStamp)
+    worksheet.update_acell(contB, equipament)
+    worksheet.update_acell(contC, temperature)
+    worksheet.update_acell(contD, humidity)
+    worksheet.update_acell(contE, pressure)
+    worksheet.update_acell(contF, gasResistence)
+
+    linha = int(linha) + 1
+    arqCont.close()
+
+    arqCont = open("cont.txt","w")
+    arqCont.write(str(linha))
+    arqCont.close()
 
 def gsLightData (timeStamp, equipament, illuminance, whiteLightLevel):
     import gspread
