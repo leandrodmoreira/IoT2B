@@ -77,8 +77,8 @@ connection = pymysql.connect(host=host,
 
 try:
     with connection.cursor() as cursor:
-        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`, `humidity` , `pressure`, `gasResistence`) VALUES (%s, %s, %s, %s, %s, %s)"
-        cursor.execute(sql, (timeStamp, equipament, temperature, humidity, pressure, gasResistence))
+        sql = "INSERT INTO `airData` (`timeStamp`, `equipament` , `temperature`, `humidity` , `pressure`, `gasResistence`) VALUES (%s, %s, %s, %s, %s)"
+        cursor.execute(sql, (timeStamp, equipament, temperature, humidity, pressure))
     connection.commit()
 
 finally:
