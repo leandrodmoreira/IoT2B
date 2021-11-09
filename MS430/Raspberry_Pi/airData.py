@@ -86,4 +86,5 @@ finally:
 
 gsAirData(timeStamp, equipament, temperature, humidity, pressure, gasResistence)
 
+
 GPIO.cleanup()
