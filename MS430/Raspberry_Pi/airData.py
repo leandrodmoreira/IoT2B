@@ -6,7 +6,7 @@ import time
 import pymysql.cursors
 import gspread
 
-from gspreads_package.gspreads_functions import *
+#from gspreads_package.gspreads_functions import *
 
 now = datetime.now()
 timeStamp =  now.strftime('%Y-%m-%d %H:%M')
@@ -84,7 +84,37 @@ try:
 finally:
     connection.close()
 
-gsAirData(timeStamp, equipament, temperature, humidity, pressure, gasResistence)
+#gsAirData(timeStamp, equipament, temperature, humidity, pressure, gasResistence)
 
+from oauth2client.service_account import ServiceAccountCredentials
+scope = ['https://spreadsheets.google.com/feeds']
+credentials = ServiceAccountCredentials.from_json_keyfile_name('iot2bv2-ebd620022c11.json', scope)
+gc = gspread.authorize(credentials)
+wks = gc.open_by_key('1Sjq3HmkMCt6LhME6F9rhteMYT1DlhseJwpMEFZc5qU4')
+worksheet = wks.get_worksheet(0)
+
+arqCont = open("cont.txt","r")
+linha = arqCont.read(100)
+
+contA = 'A' + str(linha)
+contB = 'B' + str(linha)
+contC = 'C' + str(linha)
+contD = 'D' + str(linha)
+contE = 'E' + str(linha)
+contF = 'F' + str(linha)
+
+worksheet.update_acell(contA, timeStamp)
+worksheet.update_acell(contB, equipament)
+worksheet.update_acell(contC, temperature)
+worksheet.update_acell(contD, humidity)
+worksheet.update_acell(contE, pressure)
+worksheet.update_acell(contF, gasResistence)
+
+linha = int(linha) + 1
+arqCont.close()
+
+arqCont = open("cont.txt","w")
+arqCont.write(str(linha))
+arqCont.close()
 
 GPIO.cleanup()
