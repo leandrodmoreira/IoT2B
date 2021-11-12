@@ -88,7 +88,7 @@ finally:
 
 from oauth2client.service_account import ServiceAccountCredentials
 scope = ['https://spreadsheets.google.com/feeds']
-credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/pi/Public/Dev/IoT2B/MS430/Raspberry_Pi/iot2bv2-ebd620022c11.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/iot2bv2-ebd620022c11.json', scope)
 gc = gspread.authorize(credentials)
 wks = gc.open_by_key('1Sjq3HmkMCt6LhME6F9rhteMYT1DlhseJwpMEFZc5qU4')
 worksheet = wks.get_worksheet(0)
