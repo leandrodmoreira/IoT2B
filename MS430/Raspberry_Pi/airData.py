@@ -95,6 +95,7 @@ worksheet = wks.get_worksheet(0)
 
 arqCont = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/cont.txt","r")
 linha = arqCont.read(100)
+print(linha)
 
 contA = 'A' + str(linha)
 contB = 'B' + str(linha)
