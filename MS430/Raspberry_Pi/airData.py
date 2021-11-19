@@ -119,3 +119,5 @@ arqCont.write(str(linha))
 arqCont.close()
 
 GPIO.cleanup()
+
+#Teste
