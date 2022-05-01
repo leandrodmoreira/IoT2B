@@ -114,7 +114,8 @@ worksheet.update_acell(contF, gasResistence)
 linha = int(linha) + 1
 arqCont.close()
 
-arqCont = open("cont.txt","w")
+#arqCont = open("cont.txt","w")
+arqCont = open("/home/pi/Public/dev/IoT2B/MS430/Raspberry_Pi/cont.txt","r")
 arqCont.write(str(linha))
 arqCont.close()
 
